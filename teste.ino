@@ -1,4 +1,3 @@
-#include <Wire.h>
 #define sensor A0
 
 void setup(){
@@ -7,12 +6,17 @@ void setup(){
 
 void loop(){
     int sensorValue = analogRead(sensor);
-    float voltage = sensorValue * (5.0 / 1023.0);
+    float voltage = sensorValue * (5 / 1023.0);
 
     Serial.print("Voltage: ");
     Serial.print(voltage);
     Serial.println(" V");
+  
+  	float temperature = -(0.002 * voltage) + 0.75;
 
-    // Wait for a second before the next reading:
-    delay(1000);
+    Serial.print("Temperature: ");
+    Serial.print(temperature);
+    Serial.println(" C");
+  
+    delay(5000);
 }
