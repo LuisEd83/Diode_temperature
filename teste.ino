@@ -12,11 +12,5 @@ void loop(){
     Serial.print(voltage);
     Serial.println(" V");
   
-  	float temperature = -(0.002 * voltage) + 0.75;
-
-    Serial.print("Temperature: ");
-    Serial.print(temperature);
-    Serial.println(" C");
-  
     delay(5000);
 }
